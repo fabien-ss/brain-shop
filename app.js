@@ -5,6 +5,7 @@ const BrainShop = require('./brainshop/BrainShop');
 const app = express();
 const port = 3000;
 var cors = require('cors');
+let brain = new BrainShop();
 app.use(cors());
 
 let coutner = 1;
@@ -15,9 +16,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/brainshop/:question', async (req, res) => {
-  let brain = new BrainShop();
-  console.log("call ", coutner)
   coutner += 1;
+  console.log("call ", coutner)
   const talk = await brain.talk(req.ip, req.params.question);
   res.send(talk);    
 });
