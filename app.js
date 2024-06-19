@@ -11,7 +11,6 @@ app.use(cors());
 let coutner = 1;
 
 app.get('/', (req, res) => {
-  console.log("Brain shop ",process.env.BRAINSHOP)
   res.send('Hello World!');
 });
 
