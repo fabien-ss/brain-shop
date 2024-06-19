@@ -14,9 +14,7 @@ class BrainShop
                     client: client
                 }
             }
-            else{
-                throw new Error(response.statusCode);
-            }
+            throw new Error(response.statusCode);
         }catch(e){
             return {
                 status : 400,
