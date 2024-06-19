@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 app.get('/brainshop/:question', async (req, res) => {
   coutner += 1;
-  console.log("call ", coutner)
+  console.log(`call ${counter} ${req.ip} `)
   const talk = await brain.talk(req.ip, req.params.question);
   res.send(talk);    
 });
